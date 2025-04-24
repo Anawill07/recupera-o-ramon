@@ -1,8 +1,30 @@
 class Personagem{
+    #vida
+    #força
+    #mana
     constructor(vida, força, mana){
       this.vida = vida
       this.força = força
       this.mana = mana
+    }
+
+    get vida() {
+        return this.#vida;
+    }
+    set vida(vida) {
+        this.#vida = vida;
+    }
+    get força() {
+        return this.#força;
+    }
+    set força(força) {
+        this.#força = força;
+    }
+    get mana() {
+        return this.#mana;
+    }
+    set mana(mana) {
+        this.#mana = mana;
     }
 }
 
