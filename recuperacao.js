@@ -89,3 +89,34 @@ class Arqueiro extends Personagem{
         console.log('usando poder!');
     }
 }
+
+class Jogo {
+    constructor() {
+        this.personagens = [];
+    }
+
+    adicionarPersonagem(personagem) {
+        this.personagens.push(personagem);
+    }
+
+    executarAtaques() {
+        console.log('todos os personagens atacam um inimigo');
+        const inimigo = new Personagem(100, 0, 0); 
+
+        this.personagens.forEach(p => {
+            p.atacar(inimigo);
+            console.log('vida restante do inimigo: ' + inimigo.vida);
+        });
+    }
+}
+
+const guerreiro = new Guerreiro(0, 0, 0);
+const mago = new Mago(0, 0, 0);
+const arqueiro = new Arqueiro(0, 0, 0);
+
+
+const jogo = new Jogo();
+jogo.adicionarPersonagem(guerreiro);
+jogo.adicionarPersonagem(mago);
+jogo.adicionarPersonagem(arqueiro);
+
