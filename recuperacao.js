@@ -3,8 +3,8 @@ class Personagem{
     #força
     #mana
     constructor(vida, força, mana){
-      this.vida = vida
-      this.força = força
+      this.vida = vida;
+      this.força = força;
       this.mana = mana
     }
 
@@ -31,63 +31,61 @@ class Personagem{
 class Guerreiro extends Personagem{
     
  constructor(atacar, defender, vigiar){
-    this.atacar = atacar
-    this.defender = defender
+     super(100, 20, 0);
+    this.atacar = atacar;
+    this.defender = defender;
     this.vigiar = vigiar
 
  }
- atacar(){
-    this.atacar += 6
-    console.log('atacar!')
+ atacar(alvo){
+    console.log('guerreiro ataca!');
+    alvo.vida -= this.força;
 }
 defesa(){
-    this.defesa += 4
-    console.log('defesa!')
+    console.log('defesa!');
 }
 vigiar(){
-    this.vigiar = 0 
-    console.log('vigiando!')
+    console.log('vigiando!');
 }
 }
 
+
 class Mago extends Personagem{
     constructor(atacar, defender, usarMagia){
-        this.atacar = atacar
-        this.defender = defender
+        super(80, 15, 30);
+        this.atacar = atacar;
+        this.defender = defender;
         this.usarMagia = usarMagia
     
  }
- atacar(){
-    this.atacar += 5
-    console.log('atacar!')
+ atacar(alvo){
+    console.log('mago lança magia!');
+    alvo.vida -= this.força;
 }
 defesa(){
-    this.defesa += 4
-    console.log('defesa!')
+    console.log('defesa!');
 }
 usarMagia(){
-    this.usarMagia += 10
-    console.log('usando magia!')
+    console.log('usando magia!');
 }
 } 
 
 class Arqueiro extends Personagem{
     constructor(atacar, defender, usarPoder){
-        this.atacar = atacar
-        this.defender = defender
+        super(90, 18, 10);
+        this.atacar = atacar;
+        this.defender = defender;
         this.usarPoder = usarPoder
     
     }
-    atacar(){
-        this.atacar += 8
-        console.log('atacar!')
+    atacar(alvo){
+        console.log('arqueiro dispara poder!');
+        alvo.vida -= this.força;
     }
     defesa(){
-        this.defesa += 4
-        console.log('defesa!')
+        console.log('defesa!');
     }
     usarPoder(){
-        this.usarPoder += 10
-        console.log('usando poder!')
+        console.log('usando poder!');
     }
 }
